@@ -24,7 +24,7 @@ def download_lecture(module_number,lecture_number,flag):
 	filename="mod"+module_number_str+"lec"+lecture_number_str+".mp4"
 
 
-	download_link="http://npteldownloads.iitm.ac.in/downloads_mp4/106106139/mod"+module_number_str+"lec"+lecture_number_str+".mp4"
+	download_link="http://npteldownloads.iitm.ac.in/downloads_mp4/106106156/mod"+module_number_str+"lec"+lecture_number_str+".mp4"
 	request = requests.get(download_link)
 
 	
@@ -44,10 +44,11 @@ def download_lecture(module_number,lecture_number,flag):
 if __name__ == "__main__":
 	
 	module_number=1
-	lecture_number=5
+	lecture_number=1
 	flag=1
-	os.makedirs("Introduction_to_Machine_learning")
-	os.chdir("Introduction_to_Machine_learning")
+	course_title="Introduction_to_Modern_App_development"
+	os.makedirs(course_title)
+	os.chdir(course_title)
 	while(True):
 		print ("Downloading lecture Number "+ str(lecture_number))
 		flag=download_lecture(module_number,lecture_number,flag)
