@@ -5,23 +5,15 @@ import sys
 import os
 
 
-def download_lecture(module_number,lecture_number,flag):
-	module_number_str=""
+def download_lecture(lecture_number,flag):
 
 	lecture_number_str=""
 
+	lecture_number_str=str(lecture_number)
 
-	if module_number/10==0:
-		module_number_str="0"+str(module_number)
-	else:
-		module_number_str=str(module_number)
+			
 
-	if lecture_number/10==0:
-		lecture_number_str="0"+str(lecture_number)
-	else:
-		lecture_number_str=str(lecture_number)	
-
-	filename="mod"+module_number_str+"lec"+lecture_number_str+".mp4"
+	filename="Lecture"+lecture_number_str+".mp4"
 
 
 	download_link="http://nptel.ac.in/courses/106106143/"+lecture_number_str+".mp4"
@@ -42,8 +34,7 @@ def download_lecture(module_number,lecture_number,flag):
 	
 
 if __name__ == "__main__":
-	
-	module_number=1
+
 	lecture_number=5
 	flag=1
 	course_title="Reinforcement Learning"
@@ -51,10 +42,9 @@ if __name__ == "__main__":
 	os.chdir(course_title)
 	while(True):
 		print ("Downloading lecture Number "+ str(lecture_number))
-		flag=download_lecture(module_number,lecture_number,flag)
+		flag=download_lecture(lecture_number,flag)
 		if not flag:
-			module_number+=1
-			lecture_number-=1
+			lecture_number+=1
 		lecture_number+=1	
 
 
