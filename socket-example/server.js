@@ -25,7 +25,7 @@ io.sockets.on('connection', function (socket) {
 	setInterval(function(){
 		var data = getRandomInt(0,100);
 		io.sockets.emit('pushdata', data);
-	},30);
+	},1000);
 	
 });
 
