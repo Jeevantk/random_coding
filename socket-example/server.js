@@ -20,11 +20,33 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+
+
+
+function getAngFreq(time) {
+	return Math.PI*2 * time * this.freq;
+};
+
+
+var amplitude=50;
+var phase=4;
+
+function sinewave(time) {
+	var y= amplitude*Math.sin(getAngFreq(time)+phase);
+	return y;
+}
+
+console.log(sinewave(5));
+var i=0;
+
 io.sockets.on('connection', function (socket) {
 	
 	setInterval(function(){
-		var data = getRandomInt(0,100);
+		var data = getRandomInt(10,100);
+		// var data=sinewave(i)+30;
 		io.sockets.emit('pushdata', data);
+		console.log("Data Pushed ",data);
+		i=i+1;
 	},1000);
 	
 });

@@ -25,17 +25,17 @@
 <script type="text/javascript">
 	function MainViewModel(data) {
 		var self = this;
-		var socket = io.connect('http://34.212.83.92:8070');
+		var socket = io.connect('http://127.0.0.1:8070');
 		
 		self.lineChartData = ko.observable({
-			labels : ["January","February","March","April","May","June","July"],
+			labels : ["January","February","March","April","May","June","July","August","September"],
 			datasets : [
 				{
 					fillColor : "rgba(151,187,205,0.5)",
 					strokeColor : "rgba(151,187,205,1)",
 					pointColor : "rgba(151,187,205,1)",
 					pointStrokeColor : "#fff",
-					data : [65,59,90,81,56,55,40]
+					data : [65,59,90,81,56,55,40,60,34]
 				}
 			]
 		});
