@@ -36,8 +36,8 @@ function sinewave(time) {
 	return y;
 }
 
-console.log(sinewave(5));
-var i=0;
+// console.log(sinewave(5));
+// var i=0;
 
 io.sockets.on('connection', function (socket) {
 	
